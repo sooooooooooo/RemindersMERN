@@ -2,13 +2,10 @@ import logo from './../../logo.svg';
 import './App.css';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import { Button, InputAdornment, Paper } from "@material-ui/core";
 
-import SearchIcon from '@material-ui/icons/Search';
-
-import Hidden from '@material-ui/core/Hidden';
+import Navigation from "./../Navigation/Navigation";
+import Sidebar from "./../Sidebar/Sidebar";
+import Maincontent from "./../Maincontent/Maincontent";
 
 function App() {
   return (
@@ -43,36 +40,17 @@ function App() {
     //     </Button>
     //   </Paper>
     // </Container>
+    <>
+      <Navigation />
+      
+      <Container maxWidth="md">
+        <Grid container spacing={0}>
+          <Sidebar />
 
-    <Container maxWidth="md">
-      <Grid container spacing={0}>
-        <Grid item sm={4} md={3}>
-          <Hidden only="xs">
-            <Paper style={{width:"100%"}}>
-              <TextField
-                variant="outlined"
-                placeholder="Search"
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Paper>
-          </Hidden>
+          <Maincontent />
         </Grid>
-
-        <Grid item xs={12} sm={8} md={9}>
-          <Paper style={{width:"100%"}}>
-            <Typography variant="h1" color="initial">
-              Projects
-            </Typography>
-          </Paper>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </>
   );
 }
 

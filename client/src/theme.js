@@ -25,8 +25,8 @@ const theme = createMuiTheme({
     overrides: {
         MuiPaper: {
             root: {
-                padding: "20px 10px",
-                margin: "10px",
+                // padding: "20px 10px",
+                // margin: "10px",
                 backgroundColor: "#fff", // 5d737e
             },
         },
@@ -34,6 +34,22 @@ const theme = createMuiTheme({
             root: {
                 margin: "5px",
             },
+        },
+        MuiAppBar: {
+            root: {
+                // borderBottom: `1px solid ${theme.palette.divider}`,
+                marginBottom: "10px",
+            }
+        },
+        MuiToolbar: {
+            root: {
+                flexWrap: "wrap",
+                // display: "flex",
+                // justifyContent: "space-between",
+            }
+        },
+        MuiToolbarTitle: {
+            flexGrow: 1,
         },
     },
 });
